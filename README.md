@@ -1,92 +1,129 @@
-# The Minimal theme
+Minimal resume
+===
 
-[![Build Status](https://travis-ci.org/pages-themes/minimal.svg?branch=master)](https://travis-ci.org/pages-themes/minimal) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-minimal.svg)](https://badge.fury.io/rb/jekyll-theme-minimal)
-
-*Minimal is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/minimal), or even [use it today](#usage).*
-
-![Thumbnail of minimal](thumbnail.png)
-
-## Usage
-
-To use the Minimal theme:
-
-1. Add the following to your site's `_config.yml`:
-
-    ```yml
-    theme: jekyll-theme-minimal
-    ```
-
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
-
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
-
-
-
-## Customizing
-
-### Configuration variables
-
-Minimal will respect the following variables, if set in your site's `_config.yml`:
-
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
-
-Additionally, you may choose to set the following optional variables:
-
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
-
-### Stylesheet
-
-If you'd like to add your own custom styles:
-
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
-
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original template](https://github.com/pages-themes/minimal/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+This is intended to be a dead simple, data-isolated and multilingual
+resume.
 
 ## Roadmap
 
-See the [open issues](https://github.com/pages-themes/minimal/issues) for a list of proposed features (and known issues).
+- [X] Data isolated
+- [X] Multilingual
+- [X] Show/hide personal photo
+- [X] Contact data with icons
+- [X] PDF download
+- [X] Markdown inside YAML files
+- [ ] PR for colleague references
 
-## Project philosophy
+## How to customize your own
 
-The Minimal theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+1. Fork this repository
 
-## Contributing
+```
+https://github.com/soutoner/minimal#fork-destination-box
+```
 
-Interested in contributing to Minimal? We'd love your help. Minimal is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](CONTRIBUTING.md) for instructions on how to contribute.
+2. Customize `_config.yml`. It contains language-independent data and 
+configuration setting about the resume. Don't forget to change:
+    * Your `full_name`. This will be independent of the language.
+    * `languages` if you want to restrict any language. If you want to add
+    a new language please head [Adding a new language](#new-language).
+    * `profile_photo` if you want to show a photo of you or not.
+    * `profile_picture_path` if you want to change the path of the picture 
+    or the file name. If you do not want to change this parameter,
+    please upload a `profile.jpeg` to the `img/` directory with a size of `200x200`.
+    * `contact` if you want to add links to your contact sites. Available:
+        * Personal `website`.
+        * `email`.
+        * Linked In.
+        * GitHub.
+        * Stack Overflow.
 
-### Previewing the theme locally
+3. Fill in your `en.yml` (or any other language) under `_data/`. This file
+is divided in translations and the actual data of the resume. 
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+> Please remain the keys untouched so everything work as predefined.
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/minimal`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+## Further customization
 
-### Running tests
+Although it is a very simple structure it permits some more flexibility
+that may not be so evident:
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
+* Under `_includes/` you will have the different sections of the resume.
+Feel free to create new sections. Remember that once created, you should
+`include` them in the `index.md`.
+* You can `include` different sections depending on the language, you
+only have to play with the `include` statements in the `index.md`, 
+`index_es.md` and so on.
+
+## [](#new-language)Adding a new language
+
+By default, the `index.md` page is set to English. 
+
+The key point is the `lang` option of the [Front Matter](https://jekyllrb.com/docs/frontmatter/)
+inside the pages of the root directory (i.e. `index.md`). This will define
+the language for all the included data in your resume, so from this moment on,
+Jekyll will now which data to include in your resume. You will only have
+to elaborate the data in your preferred language.
+ 
+```
+# index.md
+
+---
+layout: default
+lang: en
+---
+```
+
+If you want to add a new language to the resume you only have to follow
+this steps:
+
+1. Choose your language (e.g. Spanish) and set a short code for it `es`.
+ This is important as the code itself is not relevant but you must be consistent
+ all over the project in order to successfully localize your resume.
+
+2. Add your new language short code to the `languages` array inside `_config.yml`.
+
+```
+# _config.yml  
+languages: [en, es]
+```
+
+3. Copy an already created translation file under `_data`, and while maintaining
+the keywords, translate everything. This file holds translations that does
+not belong to any section in particular.
+
+```
+$ cp _data/en.yml _data/es.yml
+$ # Translate but maintain the keywords intact!!
+```
+
+4. Duplicate `index.md`. You can choose whatever name you want for this file
+but you follow this guideline:
+    * Keep it in the root of the project.
+    * Set the `lang` variable in the [Front Matter](https://jekyllrb.com/docs/frontmatter/)
+    to your selected short code (in this example `es`).
+    * Set the `permalink` variable also to your short code. This will grant
+    that your translation will be available under the (in this example) 
+    `/es` path despite of the file name.
+    
+```
+# index_es.md
+---
+layout: default
+lang: es
+permalink: es
+---
+```
+
+## Special thanks to
+
+* [Jekyll](https://jekyllrb.com/)
+* [The Minimal Theme](https://github.com/pages-themes/minimal)
+* [Making Jekyll multilingual - Sylvain Durand](https://www.sylvaindurand.org/making-jekyll-multilingual/)
+
+## Fork
+
+Please feel free to fork this repository and create your own resume.
+
+I will provide further information about how to customize the resume.
+

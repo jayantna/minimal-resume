@@ -1,0 +1,15 @@
+language: Español
+also_available: También disponible en
+about_me: Una pequeña descripción sobre quien eres.
+experience: Experiencia
+experiences:
+  - position: Programador
+    company: Casa
+    from: Hoy
+    to: Mañana
+    description: In charge of blablabla because blablabla.
+  - position: Programador
+    company: Casa
+    from: Hoy
+    to: Mañana
+    description: In charge of blablabla because blablabla.
