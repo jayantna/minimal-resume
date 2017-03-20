@@ -11,7 +11,7 @@ This is intended to be a dead simple, data-isolated and multilingual resume.
 - [X] Multilingual
 - [X] Show/hide personal photo
 - [X] Contact data with icons
-- [X] PDF download
+- [X] Printing (via dialog)
 - [X] Markdown inside YAML files
 - [ ] PR for colleague references
 
@@ -35,7 +35,7 @@ configuration setting about the resume. Don't forget to change:
     * `contact` if you want to add links to your contact sites. Available:
         * Personal `website`.
         * `email`.
-        * Linked In.
+        * LinkedIn.
         * GitHub.
         * Stack Overflow.
 

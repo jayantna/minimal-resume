@@ -10,9 +10,6 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    {% if site.show_download_pdf %}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
-    {% endif %}
   </head>
   <body>
     <div class="wrapper">
@@ -22,8 +19,8 @@
         {% endif %}
         <h1>{{ site.full_name }}</h1>
 
-        <hr>
-        <div id="contact-buttons">
+        <hr class="hide-print">
+         <div id="contact-buttons" class="hide-print">
           {% if site.contact.website %}
             <a href="{{ site.contact.website }}" target="_blank"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></a>
           {% endif %}
@@ -40,9 +37,11 @@
             <a href="{{ site.contact.stack_overflow }}" target="_blank"><i class="fa fa-stack-overflow fa-2x" aria-hidden="true"></i></a>
           {% endif %}
         </div>
-        <hr>
+        <hr class="hide-print">
 
-        {{ site.data[page.lang].also_available }}:
+
+        <div class="hide-print">
+            {{ site.data[page.lang].also_available }}:
         {% for lang in site.languages %}
           {% if lang != page.lang %}
             <p>- <a href="
@@ -54,17 +53,13 @@
               ">{{ site.data[lang].language }}</a></p>
           {% endif %}
         {% endfor %}
+        </div>
 
-        {% if site.show_download_pdf %}
-          <div id="editor"></div>
-          <p>{{ site.data[page.lang].download }} <a id="download-pdf" style="cursor: pointer;">PDF</a></p>
-        {% endif %}
+        <p class="hide-print"><a id="download-pdf" style="cursor: pointer;">{{ site.data[page.lang].print }} <i class="fa fa-print" aria-hidden="true"></i></a></p>
       </header>
       <section>
 
-        <div id="content">
-          {{ content }}
-        </div>
+        {{ content }}
 
       </section>
       <footer>
@@ -74,24 +69,11 @@
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
-  {% if site.show_download_pdf %}
     <script>
-      var doc = new jsPDF();
-      var specialElementhandlers = {
-        '#editor': function (element, renderer) {
-          return true;
-        }
-      };
-
       document.getElementById('download-pdf').onclick = function () {
-        doc.fromHTML(document.getElementById('content').innerHTML, 15, 15, {
-          'width': 170,
-            'elementHandlers': specialElementhandlers
-        });
-        doc.save('resume.pdf');
+          window.print();
       };
     </script>
-  {% endif %}
 
   {% if site.google_analytics %}
     <script>

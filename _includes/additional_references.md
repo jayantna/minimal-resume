@@ -7,6 +7,7 @@
     {% if ar.description %}
       <p>{{ ar.description }}</p>
     {% endif %}
+    <p class="show-print"><i>{{ ar.link }}</i></p>
   </li>
 {% endfor %}
 </ul>
