@@ -1,8 +1,9 @@
 Minimal resume
 ===
 
-This is intended to be a dead simple, data-isolated and multilingual
-resume.
+This is intended to be a dead simple, data-isolated and multilingual resume.
+
+![Thumbnail of minimal resume](thumbnail.png)
 
 ## Roadmap
 
@@ -121,9 +122,8 @@ permalink: es
 * [The Minimal Theme](https://github.com/pages-themes/minimal)
 * [Making Jekyll multilingual - Sylvain Durand](https://www.sylvaindurand.org/making-jekyll-multilingual/)
 
-## Fork
+## Forks & Contributions
 
-Please feel free to fork this repository and create your own resume.
-
-I will provide further information about how to customize the resume.
+Please feel free to fork this repository and create your own resume. Do not hesitate to open issues
+or make PR if you have suggestions, doubts or improvements!
 

@@ -16,4 +16,3 @@ lang: en
 {{ education | markdownify }}
 {{ languages | markdownify }}
 {{ additional_references | markdownify }}
-

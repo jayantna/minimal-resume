@@ -17,16 +17,16 @@ additional_reference: Additional references
 # Data:
 # ##############
 about:
-  "Always looking forward to learn new things, ready to assume responsibilities
-  and to start awesome projects. In my opinion, every challenge is a new possibility to make a difference
+  "Always looking forward to learn, ready to assume responsibilities
+  and to bootstrap awesome projects. In my opinion, every challenge is a new possibility to make a difference
   and as an engineer, choose the right tool to solve a real problem. \n
 
   Overwhelmingly fascinated by **functional programming**
   and security concerns. Also, I love meeting nice people and building teams."
 first_language: Spanish
 experiences:
-  - position: PHP and Java Backend  developer
-    company: TurizoniaTech
+  - position: PHP and Java Backend developer
+    company: Clickferry
     from: June 2016
     to: Present
     description:
@@ -34,7 +34,7 @@ experiences:
       integrating SOAP/REST services: \n
       * **PHP**: both plain PHP7 and legacy PHP5 applications. Experience dealing with *Composer* projects and Laravel/Lumen. \n
       * **Java**: knowledge about Java SE applications. *SBT* as main build tool. Experience with Play 2.5 framework.
-      In addition to this, as JVM language, basic understadning of Scala but highly interesed in building projects with this language."
+      In addition to this, as JVM language, basic understanding of Scala but highly interested in building projects with this language."
   - position: Full stack PHP developer
     company: Clickferry
     from: March 2016
@@ -56,15 +56,15 @@ projects:
   - title: FRS Caribbean Booking Engine
     link: https://frs-caribbean.com
     position: Full stack developer, TurizoniaTech
-    from: Jul 2016
+    from: July 2016
     to: Present
     description:
-      "Booking engine with RESTful API that manages the online ticket sell of the vessel that operates in routes from
-      Miami to the Bahamas."
+      "Booking engine with RESTful API that manages the online ticket sell of the vessel that operates in routes
+      from Miami to the Bahamas."
   - title: FRS Caribbean Check-in/Boarding System
     link: https://frs-caribbean.com
     position: Backend developer, TurizoniaTech
-    from: Jul 2016
+    from: July 2016
     to: Present
     description:
       "Full embarkation management system for the vessel that operates in the Caribbean and integrates effortlessly
