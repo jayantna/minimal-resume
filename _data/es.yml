@@ -14,6 +14,7 @@ mother_tongue: Lengua nativa
 other_languages: Otros idiomas
 proficiency: Nivel
 project: Proyectos
+skill: Habilidades
 additional_reference: Referencias Adicionales
 # ##############
 # Data:
@@ -90,6 +91,16 @@ projects:
     to: 2014
     description:
       "Canal de YouTube de *e-learning* donde se resuelven problemas de grados de ingeniería paso a paso."
+skills:
+  - Java (1 año)
+  - PHP (1 año)
+  - MySQL
+  - OAuth2
+  - RESTful API
+  - Scala
+  - Play Framework
+  - Laravel/Lumen
+  - Linux
 additional_references:
   - title: Entrevista para Aula Magna
     link: http://www.aulamagna.com.es/passitedu-la-plataforma-de-dos-estudiantes-de-ingenieria-para-compartir-apuntes/

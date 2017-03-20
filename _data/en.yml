@@ -14,6 +14,7 @@ mother_tongue: Mother tongue
 other_languages: Other languages
 proficiency: Proficiency
 project: Projects
+skill: Skills
 additional_reference: Additional references
 # ##############
 # Data:
@@ -88,6 +89,16 @@ projects:
     to: 2014
     description:
       "YouTube e-learning channel where math problems of Engineering degrees are solved step-by-step."
+skills:
+  - Java (1 year)
+  - PHP (1 year)
+  - MySQL
+  - OAuth2
+  - RESTful API
+  - Scala
+  - Play Framework
+  - Laravel/Lumen
+  - Linux
 additional_references:
   - title: Interview for Aula Magna (Spanish)
     link: http://www.aulamagna.com.es/passitedu-la-plataforma-de-dos-estudiantes-de-ingenieria-para-compartir-apuntes/
